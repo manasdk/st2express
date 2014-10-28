@@ -1,0 +1,7 @@
+{
+  "client": {
+    "name": "HOSTNAME_HERE",
+    "address": "IPADDR_HERE",
+    "subscriptions": [ "all" ]
+  }
+}
