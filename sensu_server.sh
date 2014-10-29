@@ -50,6 +50,7 @@ install_rabbitmq() {
 
 install_sensu() {
   apt-get -y install sensu
+  gem install sensu-plugin
 }
 
 install_dashboard(){
