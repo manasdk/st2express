@@ -4,7 +4,7 @@
       "cert_chain_file": "/etc/sensu/ssl/cert.pem",
       "private_key_file": "/etc/sensu/ssl/key.pem"
     },
-    "host": "172.16.0.200",
+    "host": "172.168.90.50",
     "port": 5671,
     "vhost": "/sensu",
     "user": "sensu",
