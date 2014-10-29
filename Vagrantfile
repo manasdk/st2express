@@ -30,5 +30,4 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.provision :shell, :path => "rsyslog.sh"
     config.vm.provision :shell, :path => "sensu_server.sh"
     config.vm.provision :shell, :path => "sensu_client.sh"
-    config.vm.provision :shell, :path => "tools.sh"
 end
