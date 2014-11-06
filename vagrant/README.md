@@ -1,5 +1,5 @@
-St2 Express
-=======
+St2 Vagrant
+===========
 
 ###Introduction
 
