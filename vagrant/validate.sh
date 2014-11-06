@@ -1,8 +1,3 @@
-service rabbitmq-server start
-service mongodb start
-st2ctl start
-
-# Validate installation
 st2 run core.local stuff -a > /dev/null
 ACTIONEXIT=$?
 
