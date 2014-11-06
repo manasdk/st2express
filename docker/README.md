@@ -14,7 +14,7 @@ To play around with this docker image, docker must be installed on your system.
 ```docker run -it st2```
 
 * Run start.sh inside container.
-```/root/st2/start.sh```
+```/root/st2/start.sh ```
 
 * Play around with st2.
 ```st2 --version```
