@@ -7,7 +7,7 @@ RUN echo "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d
 # Install Python
 RUN \
   apt-get update && \
-    apt-get install -y python python-dev python-pip python-virtualenv && \
+    apt-get install -y python python-dev python-pip python-virtualenv openssh-server && \
       rm -rf /var/lib/apt/lists/*
 
 # Set environment variable to Docker
