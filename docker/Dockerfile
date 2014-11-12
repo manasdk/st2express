@@ -11,7 +11,7 @@ RUN \
       rm -rf /var/lib/apt/lists/*
 
 # Set environment variable to Docker
-ENV container DOCKER
+ENV CONTAINER DOCKER
 
 RUN cd /root && curl -sS -k -O https://ops.stackstorm.net/releases/st2/scripts/st2_deploy.sh
 
