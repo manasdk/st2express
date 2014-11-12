@@ -5,13 +5,13 @@ service mysql start
 st2ctl start
 
 # Validate installation
-st2 run core.local stuff -a > /dev/null
+st2 run core.local date -a > /dev/null
 ACTIONEXIT=$?
 
 echo "=============================="
 echo ""
 
-if [ ! "${ACTIONEXIT}" == 0 ]
+if [ "${ACTIONEXIT}" != 0 ]
 then
   echo "ERROR!" 
   echo "Something went wrong, st2 failed to start"
