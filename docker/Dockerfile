@@ -22,3 +22,5 @@ RUN bash -c '/root/st2_deploy.sh 0.5.1';'bash'
 ADD . /root/st2/
 
 RUN bash -c 'chmod +x /root/st2/start.sh'
+
+EXPOSE 9101
