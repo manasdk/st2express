@@ -1,6 +1,7 @@
 service ssh start
 service rabbitmq-server start
 service mongodb start
+service mysql start
 st2ctl start
 
 # Validate installation
