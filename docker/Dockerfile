@@ -13,7 +13,7 @@ RUN \
 # Set environment variable to Docker
 ENV CONTAINER DOCKER
 
-RUN cd /root && curl -sS -k -O https://ops.stackstorm.net/releases/st2/scripts/st2_deploy.sh
+RUN cd /root && curl -sS -k -O https://ops.stackstorm.net/releases/st2/0.5.1/st2_deploy.sh
 
 RUN bash -c 'chmod +x /root/st2_deploy.sh'
 
