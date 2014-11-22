@@ -5,7 +5,10 @@ To play around with this docker image, docker must be installed on your system.
 
 ## Steps
 * Git clone this repo to your box.
-```git clone git@github.com:StackStorm/st2docker.git```
+```git clone https://github.com/StackStorm/st2express.git```
+
+* Change in to docker directory
+```cd st2express/docker```
 
 * Build st2 docker image.
 ```docker build -t st2 .```
