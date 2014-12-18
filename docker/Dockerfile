@@ -8,7 +8,8 @@ RUN echo "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d
 RUN \
   apt-get update && \
     apt-get install -y python python-dev python-pip python-virtualenv openssh-server && \
-      rm -rf /var/lib/apt/lists/*
+      apt-get install -y python-prettytable python-yaml && \
+        rm -rf /var/lib/apt/lists/*
 
 # Set environment variable to Docker
 ENV CONTAINER DOCKER
