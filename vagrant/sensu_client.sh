@@ -16,7 +16,7 @@ prereqs(){
 install_sensu() {
   apt-get -y install sensu
   apt-get install -y ruby ruby-dev build-essential
-  gem install sensu-plguin
+  gem install sensu-plugin
 }
 
 configure_sensu(){
