@@ -6,7 +6,29 @@ st2ver="0.6.0"
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 
+if !Vagrant.has_plugin?('vagrant-proxyconf') && !ENV['WITH_VAGRANT_PROXY'].nil?
+  fail "
+  *******                                                          *******
+    Using vagrant-proxyconf setup.  Please install vagrant-proxyconf,
+
+    \$ vagrant plugin install vagrant-proxyconf
+
+    and run with command :
+
+    \$ WITH_VAGRANT_PROXY=true vagrant up
+  *******                                                          *******
+  "
+end
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+    # proxy setup if configured
+    # Setting the proxy action up
+    if Vagrant.has_plugin?('vagrant-proxyconf')
+      config.proxy.https = ENV['HTTPS_PROXY'] unless ENV['HTTPS_PROXY'].nil?
+      config.proxy.http = ENV['HTTP_PROXY'] unless ENV['HTTP_PROXY'].nil?
+      config.proxy.no_proxy = ENV['NO_PROXY'].nil? ? ENV['NO_PROXY'] : \
+                              'localhost,127.0.0.1,10.0.0.1,169.254.169.254'
+    end
 
     config.vm.box = "ubuntu/trusty64"
     config.vm.hostname = "st2express"
