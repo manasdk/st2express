@@ -27,4 +27,5 @@ ADD . /root/st2/
 
 RUN bash -c 'chmod +x /root/st2/start.sh'
 
-EXPOSE 9101
+EXPOSE 9100  # auth service
+EXPOSE 9101  # api service
