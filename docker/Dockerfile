@@ -1,6 +1,9 @@
 # Pull base image.
 FROM dockerfile/ubuntu
 
+# Disable prompts
+ENV DEBIAN_FRONTEND noninteractive
+
 # Reset policy-rc.d
 RUN echo "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d
 
