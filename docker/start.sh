@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 service ssh start
 service rabbitmq-server start
 service mongodb start
