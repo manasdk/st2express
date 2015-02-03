@@ -20,6 +20,7 @@ then
   echo "Something went wrong, st2 failed to start"
   echo "Command output:"
   echo "${output}"
+  echo "Logs are available at /var/log/st2/"
   exit 2
 else
   echo "      _   ___     ____  _  __ "
