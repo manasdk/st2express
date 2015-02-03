@@ -8,7 +8,7 @@ echo "Sleep for 10 seconds while services start..."
 sleep 10
 
 # Validate installation
-st2 run core.local date -a > /dev/null
+output=$((st2 --debug run core.local date -a) 2>&1)
 ACTIONEXIT=$?
 
 echo "=============================="
@@ -16,8 +16,10 @@ echo ""
 
 if [ "${ACTIONEXIT}" != 0 ]
 then
-  echo "ERROR!" 
+  echo "ERROR!"
   echo "Something went wrong, st2 failed to start"
+  echo "Command output:"
+  echo "${output}"
   exit 2
 else
   echo "      _   ___     ____  _  __ "
