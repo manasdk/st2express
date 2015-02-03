@@ -1,37 +1,70 @@
 # st2docker
 
+This repository contains Dockerfile which allows run all the StackStorm
+services in a single docker container.
+
+All the services are running inside a single container which means this method
+is good for testing and developing StackStorm, but not appropriate for
+production where "one service per container" model should be followed.
+
+## Requirements
+
 To play around with this docker image, docker must be installed on your system.
 
 ## Steps
 
-* Git clone this repo to your box.
-```git clone https://github.com/StackStorm/st2express.git```
+* Git clone this repo to your boxL
 
-* Change in to docker directory
-```cd st2express/docker```
+```bash
+git clone https://github.com/StackStorm/st2express.git
+```
 
-* Build st2 docker image.
-```docker build -t st2 .```
+* Change in to docker directory:
 
-* Run a container with the image.
-```docker run -it st2```
+```bash
+cd st2express/docker
+```
 
-* Run start.sh inside container.
-```/root/st2/start.sh ```
+* Build st2 docker image:
 
-* Play around with st2.
-```st2 --version```
+```bash
+docker build -t st2 .
+```
+
+* Run a container with the image:
+
+```bash
+docker run -it st2
+```
+
+* Run start.sh inside container:
+
+```bash
+/root/st2/start.sh
+```
+
+* Play around with st2:
+
+```bash
+st2 --version
+```
+
+For more information please refer to the documentation -
+http://docs.stackstorm.com/
 
 ## Using a specific version of StackStorm
 
-If you want to use a specific version of StackStorm, edit ``Dockerfile`` and
-change the following line:
+By default, Dockerfile always uses the latest available stable version of
+StackStorm.
+
+If you want to use a specific version of, edit ``Dockerfile`` and change the
+following line:
 
 ```
 RUN cd /root && curl -sS -k -O https://ops.stackstorm.net/releases/st2/scripts/st2_deploy.sh
 ```
 
-To point to a deployment script file for a specific version, for example:
+To point to a deployment script for a specific version. For example:
 
 ```
 RUN cd /root && curl -sS -k -O https://ops.stackstorm.net/releases/st2/0.7.0/st2_deploy.sh
