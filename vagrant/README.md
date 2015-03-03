@@ -28,7 +28,7 @@ Environment variables can be used to enable or disable certain features of the S
 * WEBUI - Set to 0 to skip ui installation.  
     * DEFAULT: 1
 * ST2VER - The version of St2 to install.
-    * DEFAULT: 0.8dev
+    * DEFAULT: 0.8.0
 * HOSTNAME - the hostname to give the VM. 
     * DEFAULT: st2express
 
