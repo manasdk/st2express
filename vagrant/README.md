@@ -34,7 +34,7 @@ Environment variables can be used to enable or disable certain features of the S
 
 #### Usage
 
-`HOSTNAME=st2test ST2VER=0.8 WEBUI=0 vagrant up`
+`HOSTNAME=st2test ST2VER=0.8.0 WEBUI=0 vagrant up`
 
 If the hostname has been specified during `vagrant up` then it either needs to be exported or specified for all future vagrant commands related to that VM.
 
