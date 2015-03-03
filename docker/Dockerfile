@@ -21,7 +21,7 @@ RUN cd /root && curl -sS -k -O https://ops.stackstorm.net/releases/st2/scripts/s
 
 RUN bash -c 'chmod +x /root/st2_deploy.sh'
 
-RUN bash -c '/root/st2_deploy.sh';'bash'
+RUN bash -c '/root/st2_deploy.sh 0.8.0';'bash'
 
 ADD . /root/st2/
 

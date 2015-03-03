@@ -1,10 +1,14 @@
-st2 run core.local stuff -a > /dev/null
+echo "========= Verifying St2 ========="
+sleep 10
+st2ctl status
+echo "========== Test Action =========="
+st2 run core.local hostname
 ACTIONEXIT=$?
 
 echo "=============================="
 echo ""
 
-if [ ! "${ACTIONEXIT}" == 0 ]
+if [ ${ACTIONEXIT} -ne 0 ]
 then
   echo "ERROR!" 
   echo "Something went wrong, st2 failed to start"
