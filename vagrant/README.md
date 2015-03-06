@@ -31,6 +31,8 @@ Environment variables can be used to enable or disable certain features of the S
     * DEFAULT: 0.8.0
 * HOSTNAME - the hostname to give the VM. 
     * DEFAULT: st2express
+* BOX - the Vagrant base box
+    * DEFAULT: ubuntu/trusty64
 
 #### Usage
 
