@@ -4,6 +4,7 @@
 st2ver   = ENV['ST2VER'] ? ENV['ST2VER'] : '0.8.0'
 webui    = ENV['WEBUI'] ? ENV['WEBUI'] : '1'
 hostname = ENV['HOSTNAME'] ? ENV['HOSTNAME'] : 'st2express'
+box      = ENV['BOX'] ? ENV['BOX'] : 'ubuntu/trusty64'
 
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
@@ -32,7 +33,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                               'localhost,127.0.0.1,10.0.0.1,169.254.169.254'
     end
 
-    config.vm.box = "ubuntu/trusty64"
+    config.vm.box = "#{box}"
     config.vm.hostname = "#{hostname}"
 
     config.vm.define "#{hostname}" do |q|
