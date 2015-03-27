@@ -1,3 +1,7 @@
+# Information about a test account which used by st2_deploy
+TEST_ACCOUNT_USERNAME="testu"
+TEST_ACCOUNT_PASSWORD="testp"
+
 echo "========= Verifying St2 ========="
 sleep 10
 st2ctl status
