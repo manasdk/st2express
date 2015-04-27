@@ -31,3 +31,5 @@ RUN bash -c 'chmod +x /root/st2/start.sh'
 EXPOSE 9100
 # api server
 EXPOSE 9101
+# webui
+EXPOSE 8080
