@@ -29,5 +29,5 @@ else
   echo "  st2 is installed and ready  "
 fi
 if [ ${INSTALL_WEBUI} == "1" ]; then
-  echo "  WebUI at http://`hostname`:9101/webui/"
+  echo "  WebUI at http://`hostname`:8080/"
 fi
