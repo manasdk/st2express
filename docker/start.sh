@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+TEST_ACCOUNT_USERNAME="testu"
+TEST_ACCOUNT_PASSWORD="testp"
+
+function version_ge() { test "$(echo "$@" | tr " " "\n" | sort -V | tail -n 1)" == "$1"; }
+
 service ssh start
 service rabbitmq-server start
 service mongodb start
@@ -10,7 +15,12 @@ echo "Sleep for 10 seconds while services start..."
 sleep 10
 
 # Validate installation
-output=$((st2 --debug run core.local date -a) 2>&1)
+
+VER=`st2 --version 2>&1 | cut -c 5-`
+if version_ge $VER "0.9"; then
+    TOKEN="-t `st2 auth ${TEST_ACCOUNT_USERNAME} -p ${TEST_ACCOUNT_PASSWORD} | grep token | awk '{print $4}'`"
+fi
+output=$((st2 --debug run ${TOKEN} core.local date -a) 2>&1)
 ACTIONEXIT=$?
 
 echo "=============================="
