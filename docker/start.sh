@@ -18,7 +18,7 @@ sleep 10
 
 VER=`st2 --version 2>&1 | cut -c 5-`
 if version_ge $VER "0.9"; then
-    TOKEN="-t `st2 auth ${TEST_ACCOUNT_USERNAME} -p ${TEST_ACCOUNT_PASSWORD} | grep token | awk '{print $4}'`"
+    TOKEN="-t `st2 auth -t ${TEST_ACCOUNT_USERNAME} -p ${TEST_ACCOUNT_PASSWORD}`"
 fi
 output=$((st2 --debug run ${TOKEN} core.local date -a) 2>&1)
 ACTIONEXIT=$?
