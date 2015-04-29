@@ -31,3 +31,18 @@ fi
 if [ ${INSTALL_WEBUI} == "1" ]; then
   echo "  WebUI at http://`hostname`:8080/"
 fi
+
+echo "=========================================="
+echo ""
+
+echo "Test StackStorm user account details"
+echo ""
+echo "Username: ${TEST_ACCOUNT_USERNAME}"
+echo "Password: ${TEST_ACCOUNT_PASSWORD}"
+echo ""
+echo "To login and obtain an authentication token, run the following command:"
+echo ""
+echo "st2 auth ${TEST_ACCOUNT_USERNAME} -p ${TEST_ACCOUNT_PASSWORD}"
+echo ""
+echo "For more information see http://docs.stackstorm.com/install/deploy.html#usage"
+exit 0
