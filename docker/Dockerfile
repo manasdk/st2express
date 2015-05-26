@@ -1,5 +1,5 @@
 # Pull base image.
-FROM dockerfile/ubuntu
+FROM ubuntu:14.04
 
 # Disable prompts
 ENV DEBIAN_FRONTEND noninteractive
@@ -10,7 +10,7 @@ RUN echo "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d
 # Install Python
 RUN \
   apt-get update && \
-    apt-get install -y python python-dev python-pip python-virtualenv openssh-server && \
+    apt-get install -y curl python python-dev python-pip python-virtualenv openssh-server && \
       apt-get install -y python-prettytable python-yaml && \
         rm -rf /var/lib/apt/lists/*
 
