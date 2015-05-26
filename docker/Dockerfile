@@ -1,5 +1,5 @@
 # Pull base image.
-FROM dockerfile/ubuntu
+FROM ubuntu:14.04
 
 # Disable prompts
 ENV DEBIAN_FRONTEND noninteractive
@@ -10,7 +10,7 @@ RUN echo "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d
 # Install Python
 RUN \
   apt-get update && \
-    apt-get install -y python python-dev python-pip python-virtualenv openssh-server && \
+    apt-get install -y curl python python-dev python-pip python-virtualenv openssh-server && \
       apt-get install -y python-prettytable python-yaml && \
         rm -rf /var/lib/apt/lists/*
 
@@ -21,7 +21,7 @@ RUN cd /root && curl -sS -k -O https://ops.stackstorm.net/releases/st2/scripts/s
 
 RUN bash -c 'chmod +x /root/st2_deploy.sh'
 
-RUN bash -c '/root/st2_deploy.sh 0.9.0';'bash'
+RUN bash -c '/root/st2_deploy.sh 0.9.2';'bash'
 
 ADD . /root/st2/
 
