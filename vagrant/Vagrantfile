@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-st2ver   = ENV['ST2VER'] ? ENV['ST2VER'] : '0.9.2'
+st2ver   = ENV['ST2VER'] ? ENV['ST2VER'] : '0.11.2'
 webui    = ENV['WEBUI'] ? ENV['WEBUI'] : '1'
 hostname = ENV['HOSTNAME'] ? ENV['HOSTNAME'] : 'st2express'
 box      = ENV['BOX'] ? ENV['BOX'] : 'ubuntu/trusty64'
