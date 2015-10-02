@@ -1,6 +1,14 @@
 St2 Vagrant
 ===========
 
+# DEPRECATION NOTICE
+
+This project has been *DEPRECATED*. Please refer to the following pages for updated instructions on accessing StackStorm via:
+
+* Vagrant: http://docs.stackstorm.com/install/all_in_one.html#vagrant 
+* Docker: http://docs.stackstorm.com/install/docker.html
+
+
 ###Introduction
 
 This repo was created as a quick install of the StackStorm automation platform.  It will get you up and running with a single VM running all St2 components, as well as Mistral.
