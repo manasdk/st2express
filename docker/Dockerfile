@@ -5,7 +5,8 @@ FROM ubuntu:14.04
 ENV DEBIAN_FRONTEND noninteractive
 
 # Reset policy-rc.d
-RUN echo "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d
+RUN echo "#!/bin/sh\nexit 101" > /usr/sbin/policy-rc.d
+RUN chmod +x /usr/sbin/policy-rc.d
 
 # Install Python
 RUN \
